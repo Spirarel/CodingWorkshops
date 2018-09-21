@@ -57,7 +57,27 @@ def add(**kwargs):
 
 def show(**kwargs):
     for t in ToDo.select():
-        print(t.task, t.description, t.mins, t.done)
+        b,c,d,m,r,p = 0,0,0,0,0,0
+        if t.task == 'b':
+            b += t.mins
+        elif t.task == 'c':
+            c += t.mins
+        elif t.task == 'd':
+            d += t.mins
+        elif t.task == 'm':
+            m += t.mins
+        elif t.task == 'r':
+            r += t.mins
+        elif t.task == 'p':
+            p += t.mins
+
+    # print(t.task, t.description, t.mins, t.done)
+    print(f"{b} minutes spent blogging")
+    print(f"{c} minutes spent in cli")
+    print(f"{d} minutes spent in debugging")
+    print(f"{m} minutes spent keeping the project in mind")
+    print(f"{r} minutes spent reading")
+    print(f"{p} minutes spent learning")
 
 
 def execute(**kwargs):
